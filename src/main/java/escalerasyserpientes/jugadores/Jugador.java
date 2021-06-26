@@ -15,11 +15,11 @@ public class Jugador {
     private int partidasJugadas;
     private int partidasGanadas;
     private int partidasPerdidas;
-    private Ficha ficha;
+    private FichaJugador ficha;
     
     private Random aleatorio = new Random();
 
-    public Jugador(int id, String nombre, String apellido, Ficha ficha) {
+    public Jugador(int id, String nombre, String apellido) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -27,16 +27,12 @@ public class Jugador {
         this.partidasGanadas = 0;
         this.partidasJugadas = 0;
         this.partidasPerdidas = 0;
-        generarFicha();
+        this.ficha = new FichaJugador(id);
     }
     //metodos
     public int tirarDados(){
         int dado = aleatorio.nextInt(6)+1;
         return dado;
-    }
-    
-    private void generarFicha(){
-        ficha = new Ficha(id);
     }
     
     public void aumentarPartidas(){
@@ -81,7 +77,7 @@ public class Jugador {
         this.apellido = apellido;
     }
 
-    public Ficha getFicha() {
+    public FichaJugador getFicha() {
         return ficha;
     }
     
