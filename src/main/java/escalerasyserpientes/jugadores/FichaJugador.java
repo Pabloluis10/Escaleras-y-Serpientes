@@ -11,11 +11,11 @@ import javax.swing.JLabel;
 public class FichaJugador extends JLabel{
     
     private int id;
-    private boolean turno;
+    private boolean pierdeTurno;
     
     public FichaJugador(int id){
         this.id = id;
-        this.turno = false;
+        this.pierdeTurno = false;
         //metodos jLabel
         this.setVisible(true);
         this.setOpaque(true);
@@ -31,12 +31,12 @@ public class FichaJugador extends JLabel{
         g.drawString(String.valueOf(id), 10, 18);
     }
 
-    public boolean isTurno() {
-        return turno;
+    public boolean getPierdeTurno() {
+        return pierdeTurno;
     }
 
-    public void setTurno(boolean turno) {
-        this.turno = turno;
+    public void setTurno(boolean estado) {
+        this.pierdeTurno = estado;
     }
 
     public int getId() {
