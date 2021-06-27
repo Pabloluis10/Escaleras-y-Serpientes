@@ -14,11 +14,8 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class Avanza implements Celda {
+public class Avanza extends Celda {
     
-    private JLabel celda;
-    private int numCelda;
-    private String tipo;
     private int cantAvanza;
     
     public Avanza(int canAvanza){
@@ -38,26 +35,6 @@ public class Avanza implements Celda {
         celda.setForeground(Color.BLACK);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("<html><body>AVANZA<br>"+cantAvanza+" CASILLAS</body></html>");
-    }
-
-    public int getNumCelda() {
-        return numCelda;
-    }
-
-    public void setNumCelda(int numCelda) {
-        this.numCelda = numCelda;
-    }
-
-    public JLabel getCelda() {
-        return celda;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }    
-    
-    public int getCantAvanza() {
-        return cantAvanza;
     }
 }
 

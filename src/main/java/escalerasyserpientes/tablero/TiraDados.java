@@ -14,11 +14,7 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class TiraDados implements Celda {
-    
-    private JLabel celda;
-    private int numCelda;
-    private String tipo;
+public class TiraDados extends Celda {
     
     public TiraDados(){
         celda = new JLabel();
@@ -37,20 +33,4 @@ public class TiraDados implements Celda {
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("<html><body>TIRA<br>DADO</body></html>");
     }
-
-    public int getNumCelda() {
-        return numCelda;
-    }
-
-    public void setNumCelda(int numCelda) {
-        this.numCelda = numCelda;
-    }
-
-    public JLabel getCelda() {
-        return celda;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }    
 }

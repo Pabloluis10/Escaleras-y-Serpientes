@@ -14,11 +14,7 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class PierdeTurno implements Celda{
-    
-    private JLabel celda;
-    private int numCelda;
-    private String tipo;
+public class PierdeTurno extends Celda{
     
     public PierdeTurno(){
         celda = new JLabel();
@@ -36,21 +32,5 @@ public class PierdeTurno implements Celda{
         celda.setForeground(Color.BLACK);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("<html><body>PIERDE<br>TURNO</body></html>");
-    }
-
-    public int getNumCelda() {
-        return numCelda;
-    }
-
-    public void setNumCelda(int numCelda) {
-        this.numCelda = numCelda;
-    }
-
-    public JLabel getCelda() {
-        return celda;
-    }
-
-    public String getTipo() {
-        return tipo;
     }    
 }

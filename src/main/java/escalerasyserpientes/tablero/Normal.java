@@ -9,11 +9,7 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class Normal implements Celda {
-
-    private JLabel celda;
-    private int numCelda;
-    private String tipo;
+public class Normal extends Celda {
     
     public Normal() {
         celda = new JLabel();
@@ -48,21 +44,5 @@ public class Normal implements Celda {
         celda.setBackground(Color.DARK_GRAY);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("Fin!!!");
-    }
-
-    public JLabel getCelda() {
-        return celda;
-    }
-
-    public int getNumCelda() {
-        return numCelda;
-    }
-    
-    public void setNumCelda(int numCelda) {
-        this.numCelda = numCelda;
-    }
-
-    public String getTipo() {
-        return tipo;
     }
 }

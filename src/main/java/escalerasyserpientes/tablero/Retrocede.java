@@ -14,11 +14,8 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class Retrocede implements Celda {
+public class Retrocede extends Celda {
     
-    private JLabel celda;
-    private int numCelda;
-    private String tipo;
     private int cantRetrocede;
     
     public Retrocede(int canRetrocede){
