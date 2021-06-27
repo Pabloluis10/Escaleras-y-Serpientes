@@ -18,8 +18,10 @@ public class Avanza implements Celda {
     private JLabel celda;
     private int numCelda;
     private String tipo;
+    private int cantAvanza;
     
-    public Avanza(){
+    public Avanza(int canAvanza){
+        this.cantAvanza = cantAvanza;
         celda = new JLabel();
         tipo = "Avanza";
     }
@@ -51,5 +53,9 @@ public class Avanza implements Celda {
     public String getTipo() {
         return tipo;
     }    
+    
+    public int getCantAvanza() {
+        return cantAvanza;
+    }
 }
 
