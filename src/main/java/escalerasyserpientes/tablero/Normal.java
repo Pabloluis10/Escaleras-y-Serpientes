@@ -26,22 +26,23 @@ public class Normal implements Celda {
         celda.setOpaque(true);
         celda.setHorizontalAlignment(SwingConstants.CENTER);
         celda.setForeground(Color.WHITE);
+        celda.setHorizontalAlignment(SwingConstants.CENTER);//texto centrado
+        celda.setVerticalAlignment(SwingConstants.CENTER);
         if (numCelda == 1) {    
             celda.setBackground(Color.ORANGE);
             celda.setText("Inicio\n "+String.valueOf(numCelda));//establecemos el número de celda como texto
-            celda.setHorizontalAlignment(SwingConstants.CENTER);//texto centrado
-            celda.setVerticalAlignment(SwingConstants.CENTER);
         } else {
             celda.setBackground(Color.BLACK);
-            celda.setText("Inicio\n "+String.valueOf(numCelda));//establecemos el número de celda como texto
-            celda.setHorizontalAlignment(SwingConstants.CENTER);//texto centrado
-            celda.setVerticalAlignment(SwingConstants.CENTER);
+            celda.setText(String.valueOf(numCelda));//establecemos el número de celda como texto
         }
     }
     
-    public void diseñarFina(){
+    public void diseñarFinal(){
+        celda.setSize(60, 60);
         celda.setVisible(true);
         celda.setOpaque(true);
+        celda.setHorizontalAlignment(SwingConstants.CENTER);
+        celda.setVerticalAlignment(SwingConstants.CENTER);
         celda.setForeground(Color.BLUE);
         celda.setBackground(Color.DARK_GRAY);
         celda.setText("Fin!!!");
@@ -53,6 +54,10 @@ public class Normal implements Celda {
 
     public int getNumCelda() {
         return numCelda;
+    }
+    
+    public void setNumCelda(int numCelda) {
+        this.numCelda = numCelda;
     }
 
     public String getTipo() {
