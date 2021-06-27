@@ -3,6 +3,7 @@ package escalerasyserpientes.tablero;
  *
  * @author pabloluis
  */
-public class Celda {
+public interface Celda {
     
+    void diseñar();
 }
