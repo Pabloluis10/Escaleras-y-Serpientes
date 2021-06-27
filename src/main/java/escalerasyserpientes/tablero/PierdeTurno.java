@@ -6,6 +6,7 @@
 package escalerasyserpientes.tablero;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -33,6 +34,7 @@ public class PierdeTurno implements Celda{
         celda.setVerticalAlignment(SwingConstants.CENTER);
         celda.setBackground(Color.RED);
         celda.setForeground(Color.BLACK);
+        celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("<html><body>PIERDE<br>TURNO</body></html>");
     }
 

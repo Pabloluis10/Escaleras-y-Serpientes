@@ -6,6 +6,7 @@
 package escalerasyserpientes.tablero;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -35,7 +36,8 @@ public class Avanza implements Celda {
         celda.setVerticalAlignment(SwingConstants.CENTER);
         celda.setBackground(Color.CYAN);
         celda.setForeground(Color.BLACK);
-        celda.setText("AVANZA");
+        celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
+        celda.setText("<html><body>AVANZA<br>"+cantAvanza+" CASILLAS</body></html>");
     }
 
     public int getNumCelda() {

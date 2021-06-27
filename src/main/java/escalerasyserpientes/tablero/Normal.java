@@ -1,6 +1,7 @@
 package escalerasyserpientes.tablero;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -24,13 +25,13 @@ public class Normal implements Celda {
         celda.setSize(60, 60);
         celda.setVisible(true);
         celda.setOpaque(true);
-        celda.setHorizontalAlignment(SwingConstants.CENTER);
         celda.setForeground(Color.WHITE);
         celda.setHorizontalAlignment(SwingConstants.CENTER);//texto centrado
         celda.setVerticalAlignment(SwingConstants.CENTER);
+        celda.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
         if (numCelda == 1) {    
             celda.setBackground(Color.ORANGE);
-            celda.setText("Inicio\n "+String.valueOf(numCelda));//establecemos el número de celda como texto
+            celda.setText("Inicio "+numCelda);//establecemos el número de celda como texto
         } else {
             celda.setBackground(Color.BLACK);
             celda.setText(String.valueOf(numCelda));//establecemos el número de celda como texto
@@ -45,6 +46,7 @@ public class Normal implements Celda {
         celda.setVerticalAlignment(SwingConstants.CENTER);
         celda.setForeground(Color.BLUE);
         celda.setBackground(Color.DARK_GRAY);
+        celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("Fin!!!");
     }
 

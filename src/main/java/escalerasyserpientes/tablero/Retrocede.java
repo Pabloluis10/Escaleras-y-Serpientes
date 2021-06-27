@@ -14,15 +14,17 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class TiraDados implements Celda {
+public class Retrocede implements Celda {
     
     private JLabel celda;
     private int numCelda;
     private String tipo;
+    private int cantRetrocede;
     
-    public TiraDados(){
+    public Retrocede(int canRetrocede){
+        this.cantRetrocede = cantRetrocede;
         celda = new JLabel();
-        tipo = "Tira Dados";
+        tipo = "Retrocede";
     }
 
     @Override
@@ -32,10 +34,10 @@ public class TiraDados implements Celda {
         celda.setOpaque(true);
         celda.setHorizontalAlignment(SwingConstants.CENTER);
         celda.setVerticalAlignment(SwingConstants.CENTER);
-        celda.setBackground(Color.blue);
-        celda.setForeground(Color.WHITE);
+        celda.setBackground(Color.GREEN);
+        celda.setForeground(Color.BLACK);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        celda.setText("<html><body>TIRA<br>DADO</body></html>");
+        celda.setText("<html><body>RETROCEDE<br>"+cantRetrocede+" CASILLAS</body></html>");
     }
 
     public int getNumCelda() {
@@ -53,4 +55,8 @@ public class TiraDados implements Celda {
     public String getTipo() {
         return tipo;
     }    
+    
+    public int getCantAvanza() {
+        return cantRetrocede;
+    }
 }
