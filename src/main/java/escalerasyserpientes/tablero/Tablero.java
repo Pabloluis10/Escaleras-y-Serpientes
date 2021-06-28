@@ -10,7 +10,7 @@ public class Tablero {
    
     //Atributos
     private final Celda[][] tablero;
-    private final JLabel [][] diseñoTablero;
+    private final JLabel[][] diseñoTablero;
     private final int filas;
     private final int columnas;
 
@@ -28,7 +28,6 @@ public class Tablero {
                 numCelda++;
                 if(tablero[i][j] != null){//asignamos un número de columna
                    tablero[i][j].setNumCelda(numCelda);
-                   tablero[i][j].diseñar();
                 } else if(i==0 && j==0){
                     tablero[i][j] = new Normal(numCelda);
                     tablero[i][j].diseñar();
@@ -36,6 +35,26 @@ public class Tablero {
                     tablero[i][j] = new Normal(numCelda, "Fin");
                 } else {
                     tablero[i][j] = new Normal(numCelda);
+                    tablero[i][j].diseñar();
+                }
+            }
+        }
+        
+        for(int i=0; i<filas; i++){
+            for(int j=0; j<columnas; j++){
+                if(tablero[i][j] instanceof Subida) {
+                    Subida aux = (Subida)tablero[i][j];
+                    int filaFinal = aux.getFilaFinal();
+                    int columnaFinal =aux.getColumnaFinal();
+                    aux.setNumCeldaSube(tablero[filaFinal][columnaFinal].getNumCelda());
+                    aux.diseñar();
+                } else if(tablero[i][j] instanceof Bajada) {
+                    Bajada aux = (Bajada)tablero[i][j];
+                    int filaFinal = aux.getFilaFinal();
+                    int columnaFinal =aux.getColumnaFinal();
+                    aux.setNumCeldaBaja(tablero[filaFinal][columnaFinal].getNumCelda());
+                    aux.diseñar();
+                } else {
                     tablero[i][j].diseñar();
                 }
                 //tablero de jlabels

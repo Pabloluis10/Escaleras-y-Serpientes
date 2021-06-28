@@ -1,5 +1,6 @@
 package escalerasyserpientes.jugadores;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ import java.util.Scanner;
  *
  * @author pabloluis
  */
-public class VectorJugadores {
+public class VectorJugadores implements Serializable {
     //atributos
     private ArrayList<Jugador> jugadores = new ArrayList<>();
     private Scanner entrada = new Scanner(System.in);

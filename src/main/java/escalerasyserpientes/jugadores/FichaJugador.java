@@ -2,6 +2,7 @@ package escalerasyserpientes.jugadores;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -9,7 +10,7 @@ import javax.swing.SwingConstants;
  *
  * @author pabloluis
  */
-public class FichaJugador extends JLabel{
+public class FichaJugador extends JLabel implements Serializable {
     
     private int id;
     private int posActual;

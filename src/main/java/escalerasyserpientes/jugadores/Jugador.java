@@ -1,12 +1,13 @@
 package escalerasyserpientes.jugadores;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  *
  * @author pabloluis
  */
-public class Jugador {
+public class Jugador implements Serializable {
     
     //atributos
     private int id;
