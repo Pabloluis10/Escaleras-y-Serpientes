@@ -32,7 +32,7 @@ public class Subida extends Celda {
         celda.setBackground(Color.WHITE);
         celda.setForeground(Color.BLUE);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        celda.setText("<html><body>SUBE A<br>CASILLAS "+numCeldaSube+"</body></html>");
+        celda.setText("<html><body>SUBE A<br>CASILLA "+numCeldaSube+"</body></html>");
     }    
     
     public int getNumCeldaSube() {

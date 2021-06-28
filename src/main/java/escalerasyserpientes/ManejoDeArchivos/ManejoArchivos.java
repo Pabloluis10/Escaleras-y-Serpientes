@@ -64,7 +64,9 @@ public class ManejoArchivos {
             try{
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
-                tablero.getTablero()[fila][columna] = new PierdeTurno();
+                if(tablero.getTablero()[fila][columna] == null){
+                    tablero.getTablero()[fila][columna] = new PierdeTurno();
+                }
             } catch (Exception e){
                 System.out.println("Datos Incorrectos");
             }
@@ -75,7 +77,9 @@ public class ManejoArchivos {
             try{
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
-                tablero.getTablero()[fila][columna] = new TiraDados();
+                if(tablero.getTablero()[fila][columna] == null){
+                    tablero.getTablero()[fila][columna] = new TiraDados();
+                }
             } catch (Exception e){
                 System.out.println("Datos Incorrectos");
             }
@@ -87,7 +91,9 @@ public class ManejoArchivos {
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
                 cantAvanza = Integer.valueOf(datSeparado[2]);
-                tablero.getTablero()[fila][columna] = new Avanza(cantAvanza);
+                if(tablero.getTablero()[fila][columna] == null){
+                    tablero.getTablero()[fila][columna] = new Avanza(cantAvanza);
+                }
             } catch (Exception e){
                 System.out.println("Datos Incorrectos");
             }
@@ -99,7 +105,9 @@ public class ManejoArchivos {
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
                 cantRetrocede = Integer.valueOf(datSeparado[2]);
-                tablero.getTablero()[fila][columna] = new Retrocede(cantRetrocede);
+                if(tablero.getTablero()[fila][columna] == null){
+                    tablero.getTablero()[fila][columna] = new Retrocede(cantRetrocede);
+                }
             } catch (Exception e){
                 System.out.println("Datos Incorrectos");
             }
@@ -112,7 +120,9 @@ public class ManejoArchivos {
                 columna = Integer.valueOf(datSeparado[1]);
                 filaFinal = Integer.valueOf(datSeparado[2]);
                 colFinal = Integer.valueOf(datSeparado[3]);
-                tablero.getTablero()[fila][columna] = new Subida(filaFinal, colFinal);
+                if(tablero.getTablero()[fila][columna] == null){
+                    tablero.getTablero()[fila][columna] = new Subida(filaFinal, colFinal);
+                }
             } catch (Exception e){
                 System.out.println("Datos Incorrectos");
             }
@@ -125,7 +135,9 @@ public class ManejoArchivos {
                 columna = Integer.valueOf(datSeparado[1]);
                 filaFinal = Integer.valueOf(datSeparado[2]);
                 colFinal = Integer.valueOf(datSeparado[3]);
-                tablero.getTablero()[fila][columna] = new Bajada(filaFinal, colFinal);
+                if(tablero.getTablero()[fila][columna] == null){
+                    tablero.getTablero()[fila][columna] = new Bajada(filaFinal, colFinal);
+                }
             } catch (Exception e){
                 System.out.println("Datos Incorrectos");
             }

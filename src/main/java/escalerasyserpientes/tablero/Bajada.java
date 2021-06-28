@@ -37,7 +37,7 @@ public class Bajada extends Celda {
         celda.setBackground(Color.WHITE);
         celda.setForeground(Color.BLUE);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        celda.setText("<html><body>BAJA A<br>CASILLAS "+numCeldaBaja+"</body></html>");
+        celda.setText("<html><body>BAJA A<br>CASILLA "+numCeldaBaja+"</body></html>");
     }    
     
     public int getNumCeldaBaja() {
