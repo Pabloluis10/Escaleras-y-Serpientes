@@ -16,9 +16,9 @@ import javax.swing.SwingConstants;
  */
 public class Avanza extends Celda {
     
-    private int cantAvanza;
+    private final int cantAvanza;
     
-    public Avanza(int canAvanza){
+    public Avanza(int cantAvanza){
         this.cantAvanza = cantAvanza;
         celda = new JLabel();
         tipo = "Avanza";
@@ -35,6 +35,10 @@ public class Avanza extends Celda {
         celda.setForeground(Color.BLACK);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("<html><body>AVANZA<br>"+cantAvanza+" CASILLAS</body></html>");
+    }
+    
+    public int getCantAvanza(){
+        return cantAvanza;
     }
 }
 

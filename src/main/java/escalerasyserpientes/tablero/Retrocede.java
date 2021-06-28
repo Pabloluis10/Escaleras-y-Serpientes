@@ -16,9 +16,9 @@ import javax.swing.SwingConstants;
  */
 public class Retrocede extends Celda {
     
-    private int cantRetrocede;
+    private final int cantRetrocede;
     
-    public Retrocede(int canRetrocede){
+    public Retrocede(int cantRetrocede){
         this.cantRetrocede = cantRetrocede;
         celda = new JLabel();
         tipo = "Retrocede";
@@ -35,25 +35,9 @@ public class Retrocede extends Celda {
         celda.setForeground(Color.BLACK);
         celda.setBorder(BorderFactory.createLineBorder(Color.yellow));
         celda.setText("<html><body>RETROCEDE<br>"+cantRetrocede+" CASILLAS</body></html>");
-    }
-
-    public int getNumCelda() {
-        return numCelda;
-    }
-
-    public void setNumCelda(int numCelda) {
-        this.numCelda = numCelda;
-    }
-
-    public JLabel getCelda() {
-        return celda;
-    }
-
-    public String getTipo() {
-        return tipo;
     }    
     
-    public int getCantAvanza() {
+    public int getCantRetrocede() {
         return cantRetrocede;
     }
 }

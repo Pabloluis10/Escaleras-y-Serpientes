@@ -10,12 +10,21 @@ import javax.swing.SwingConstants;
  * @author pabloluis
  */
 public class Normal extends Celda {
-    
-    public Normal() {
+    //constructores
+    public Normal(int numCelda) {
+        this.numCelda = numCelda;
         celda = new JLabel();
         tipo = "Normal";
     }
+    
+    public Normal(int numCelda, String tipo){
+        this.numCelda = numCelda;
+        celda = new JLabel();
+        this.tipo = tipo;
+        this.diseñarFinal();
+    }
 
+    //metodos
     @Override
     public void diseñar() {
         celda.setSize(60, 60);
@@ -34,7 +43,7 @@ public class Normal extends Celda {
         }
     }
     
-    public void diseñarFinal(){
+    private void diseñarFinal(){
         celda.setSize(60, 60);
         celda.setVisible(true);
         celda.setOpaque(true);

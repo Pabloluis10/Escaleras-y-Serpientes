@@ -12,11 +12,13 @@ import javax.swing.SwingConstants;
 public class FichaJugador extends JLabel{
     
     private int id;
+    private int posActual;
     private boolean pierdeTurno;
     
     public FichaJugador(int id){
         this.id = id;
         this.pierdeTurno = false;
+        this.posActual = 0;
         //metodos jLabel
         this.setVisible(true);
         this.setOpaque(true);
@@ -31,6 +33,14 @@ public class FichaJugador extends JLabel{
         g.fillOval(0, 0, 30, 30);//diseño ficha
         g.setColor(Color.DARK_GRAY);
         g.drawString(String.valueOf(id), 10, 18);//id como texto de la ficha
+    }
+
+    public int getPosActual() {
+        return posActual;
+    }
+
+    public void setPosActual(int posActual) {
+        this.posActual = posActual;
     }
 
     public boolean getPierdeTurno() {
