@@ -44,7 +44,7 @@ public class ManejoArchivos {
         }
     }
     
-    public void determinarTablero(String linea, Tablero tablero){
+    private void determinarTablero(String linea, Tablero tablero){
         String datos;
         if( linea.substring(0, tamTablero.length()).equals(tamTablero)){
             datos = linea.substring(tamTablero.length(), linea.length()-1);
