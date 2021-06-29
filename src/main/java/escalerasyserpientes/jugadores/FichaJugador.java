@@ -48,7 +48,7 @@ public class FichaJugador extends JLabel implements Serializable {
         return pierdeTurno;
     }
 
-    public void setTurno(boolean estado) {
+    public void setPierdeTurno(boolean estado) {
         this.pierdeTurno = estado;
     }
 

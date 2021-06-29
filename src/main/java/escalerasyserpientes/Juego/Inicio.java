@@ -1,6 +1,7 @@
 package escalerasyserpientes.Juego;
 
 import escalerasyserpientes.jugadores.*;
+import escalerasyserpientes.tablero.*;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -12,6 +13,7 @@ public class Inicio extends javax.swing.JFrame {
     //atributo
     private VectorJugadores jugadores = new VectorJugadores();
     private CrearUsuario ingresar = new CrearUsuario(jugadores);
+    private Tablero tablero;
     
     public Inicio() {
         initComponents();
