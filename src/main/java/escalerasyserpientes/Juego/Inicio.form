@@ -99,6 +99,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cargar o gurdar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonArchivoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonJuego">
       <Properties>

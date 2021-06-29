@@ -1,5 +1,6 @@
 package escalerasyserpientes.Juego;
 
+import escalerasyserpientes.ManejoDeArchivos.ManejoArchivos;
 import escalerasyserpientes.jugadores.*;
 import escalerasyserpientes.tablero.*;
 import java.awt.Image;
@@ -14,6 +15,7 @@ public class Inicio extends javax.swing.JFrame {
     private VectorJugadores jugadores = new VectorJugadores();
     private CrearUsuario ingresar = new CrearUsuario(jugadores);
     private Tablero tablero;
+    private Archivos archivo = new Archivos(tablero);
     
     public Inicio() {
         initComponents();
@@ -64,6 +66,11 @@ public class Inicio extends javax.swing.JFrame {
         });
 
         jButtonArchivo.setText("Cargar o gurdar");
+        jButtonArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonArchivoActionPerformed(evt);
+            }
+        });
 
         jButtonJuego.setText("JUGAR");
         jButtonJuego.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +122,10 @@ public class Inicio extends javax.swing.JFrame {
     private void jButtonJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJuegoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonJuegoActionPerformed
+
+    private void jButtonArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonArchivoActionPerformed
+        archivo.setVisible(true);
+    }//GEN-LAST:event_jButtonArchivoActionPerformed
 
     /**
      * @param args the command line arguments
