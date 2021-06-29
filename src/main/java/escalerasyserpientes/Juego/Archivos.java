@@ -27,8 +27,7 @@ public class Archivos extends javax.swing.JFrame {
         jLabelUbicacion = new javax.swing.JLabel();
         jTextFieldUbicacion = new javax.swing.JTextField();
         jButtonLeerArchivo = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jButtonSalir = new javax.swing.JButton();
 
         titulo.setBackground(new java.awt.Color(243, 122, 8));
         titulo.setFont(new java.awt.Font("TlwgMono", 3, 24)); // NOI18N
@@ -58,6 +57,13 @@ public class Archivos extends javax.swing.JFrame {
             }
         });
 
+        jButtonSalir.setText("Salir a menú");
+        jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,6 +85,10 @@ public class Archivos extends javax.swing.JFrame {
                         .addGap(266, 266, 266)
                         .addComponent(jButtonLeerArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +103,9 @@ public class Archivos extends javax.swing.JFrame {
                     .addComponent(jTextFieldUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jButtonLeerArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(144, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(jButtonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -104,12 +116,20 @@ public class Archivos extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldUbicacionActionPerformed
 
     private void jButtonLeerArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeerArchivoActionPerformed
-        
+        String pathname = jTextFieldUbicacion.getText();
+        archivos.leerArchivo(tablero, pathname);
+        tablero.diseñarTablero();
+        jLabelUbicacion.setText("");
     }//GEN-LAST:event_jButtonLeerArchivoActionPerformed
+
+    private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonLeerArchivo;
+    private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelUbicacion;
     private javax.swing.JTextField jTextFieldUbicacion;
     private javax.swing.JLabel titulo;
