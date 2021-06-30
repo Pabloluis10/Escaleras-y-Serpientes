@@ -28,6 +28,8 @@ public class Tablero {
     
     public void diseñarTablero(){
         int numCelda=0;
+        int finFila = filas - 1;
+        int finColumna = columnas - 1;
         for(int i=0; i<filas; i++){
             for(int j=0; j<columnas; j++){
                 numCelda++;
@@ -36,8 +38,10 @@ public class Tablero {
                 } else if(i==0 && j==0){
                     tablero[i][j] = new Normal(numCelda);
                     tablero[i][j].diseñar();
-                } else if(i==filas-1 && j==columnas-1){
+                } else if(i==finFila && j==finColumna){
                     tablero[i][j] = new Normal(numCelda, "Fin");
+                    Normal aux = (Normal)tablero[i][j];
+                    aux.diseñarFinal();
                 } else {
                     tablero[i][j] = new Normal(numCelda);
                     tablero[i][j].diseñar();

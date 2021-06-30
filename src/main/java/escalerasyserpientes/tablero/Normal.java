@@ -43,7 +43,7 @@ public class Normal extends Celda {
         }
     }
     
-    private void diseñarFinal(){
+    public void diseñarFinal(){
         celda.setSize(60, 60);
         celda.setVisible(true);
         celda.setOpaque(true);
