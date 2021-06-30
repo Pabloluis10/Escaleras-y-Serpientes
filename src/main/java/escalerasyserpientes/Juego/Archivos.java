@@ -118,8 +118,7 @@ public class Archivos extends javax.swing.JFrame {
     private void jButtonLeerArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeerArchivoActionPerformed
         String pathname = jTextFieldUbicacion.getText();
         archivos.leerArchivo(tablero, pathname);
-        tablero.diseñarTablero();
-        jLabelUbicacion.setText("");
+        jTextFieldUbicacion.setText("");
     }//GEN-LAST:event_jButtonLeerArchivoActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed

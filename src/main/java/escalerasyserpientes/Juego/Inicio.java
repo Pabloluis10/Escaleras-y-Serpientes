@@ -12,10 +12,11 @@ import javax.swing.ImageIcon;
  */
 public class Inicio extends javax.swing.JFrame {
     //atributo
-    private VectorJugadores jugadores = new VectorJugadores();
-    private CrearUsuario ingresar = new CrearUsuario(jugadores);
-    private Tablero tablero;
+    private VectorJugadores usuarios = new VectorJugadores();
+    private CrearUsuario ingresar = new CrearUsuario(usuarios);
+    private Tablero tablero = new Tablero();
     private Archivos archivo = new Archivos(tablero);
+    private graficosJuego juego;  
     
     public Inicio() {
         initComponents();
@@ -120,7 +121,14 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_crearJugadorActionPerformed
 
     private void jButtonJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJuegoActionPerformed
-        // TODO add your handling code here:
+        Jugador[] jugadores = new Jugador[usuarios.cantUsuarios()];
+        for(int i=0; i<usuarios.cantUsuarios(); i++){
+            jugadores[i] = usuarios.obtenerUsuario(i);
+        }
+        tablero.diseñarTablero();
+        juego = new graficosJuego(tablero, jugadores);
+        juego.darForma();
+        juego.setVisible(true);
     }//GEN-LAST:event_jButtonJuegoActionPerformed
 
     private void jButtonArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonArchivoActionPerformed

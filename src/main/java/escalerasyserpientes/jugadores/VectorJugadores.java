@@ -40,5 +40,14 @@ public class VectorJugadores implements Serializable {
         return info;
     }
     
+    public Jugador obtenerUsuario(int i){
+        Jugador aux = jugadores.get(i);
+        return aux;
+    }
+    
+    public int cantUsuarios(){
+        return jugadores.size();
+    }
+    
     
 }

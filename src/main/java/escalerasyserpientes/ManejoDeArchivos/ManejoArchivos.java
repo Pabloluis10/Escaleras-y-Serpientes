@@ -33,7 +33,9 @@ public class ManejoArchivos {
             try {
                 BufferedReader bf = new BufferedReader(new FileReader(arch));
                 while ( (linea = bf.readLine()) != null ) {
+                    System.out.println(linea);
                     determinarTablero(linea, tablero);
+                    
                 }
                 
             } catch (IOException e) {
@@ -47,15 +49,18 @@ public class ManejoArchivos {
     private void determinarTablero(String linea, Tablero tablero){
         String datos;
         if( linea.substring(0, tamTablero.length()).equals(tamTablero)){
+            
             datos = linea.substring(tamTablero.length(), linea.length()-1);
+            System.out.println(datos);
             String[] datSeparado = datos.split("\\,");
+            
             int filas, columnas;
             try{
                 filas = Integer.valueOf(datSeparado[0]);
                 columnas = Integer.valueOf(datSeparado[1]);
-                tablero = new Tablero(filas, columnas);//creamos el objeto Tablero
+                tablero.iniciarAtributos(filas, columnas);//creamos el objeto Tablero
             } catch (Exception e){
-                System.out.println("Datos Incorrectos");
+                System.out.println("Datos Incorrectos 1");
             }
         } else if (linea.substring(0,pierde.length()).equals(pierde)){
             datos = linea.substring(pierde.length(), linea.length()-1);
@@ -65,10 +70,10 @@ public class ManejoArchivos {
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
                 if(tablero.getTablero()[fila][columna] == null){
-                    tablero.getTablero()[fila][columna] = new PierdeTurno();
+                    tablero.establecerCelda(fila, columna, new PierdeTurno());
                 }
             } catch (Exception e){
-                System.out.println("Datos Incorrectos");
+                System.out.println("Datos Incorrectos 2");
             }
         } else if (linea.substring(0, tiraDados.length()).equals(tiraDados)){
             datos = linea.substring(tiraDados.length(), linea.length()-1);
@@ -78,10 +83,10 @@ public class ManejoArchivos {
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
                 if(tablero.getTablero()[fila][columna] == null){
-                    tablero.getTablero()[fila][columna] = new TiraDados();
+                    tablero.establecerCelda(fila, columna, new TiraDados());
                 }
             } catch (Exception e){
-                System.out.println("Datos Incorrectos");
+                System.out.println("Datos Incorrectos 3");
             }
         } else if (linea.substring(0,avanza.length()).equals(avanza)){
             datos = linea.substring(avanza.length(), linea.length()-1);
@@ -92,13 +97,14 @@ public class ManejoArchivos {
                 columna = Integer.valueOf(datSeparado[1]);
                 cantAvanza = Integer.valueOf(datSeparado[2]);
                 if(tablero.getTablero()[fila][columna] == null){
-                    tablero.getTablero()[fila][columna] = new Avanza(cantAvanza);
+                    tablero.establecerCelda(fila, columna, new Avanza(cantAvanza));
                 }
             } catch (Exception e){
-                System.out.println("Datos Incorrectos");
+                System.out.println("Datos Incorrectos 4");
             }
         } else if (linea.substring(0, retrocede.length()).equals(retrocede)) {
             datos = linea.substring(retrocede.length(), linea.length()-1);
+           
             String[] datSeparado = datos.split("\\,");
             int fila, columna, cantRetrocede;
             try{
@@ -106,10 +112,10 @@ public class ManejoArchivos {
                 columna = Integer.valueOf(datSeparado[1]);
                 cantRetrocede = Integer.valueOf(datSeparado[2]);
                 if(tablero.getTablero()[fila][columna] == null){
-                    tablero.getTablero()[fila][columna] = new Retrocede(cantRetrocede);
+                    tablero.establecerCelda(fila, columna, new Retrocede(cantRetrocede));
                 }
             } catch (Exception e){
-                System.out.println("Datos Incorrectos");
+                System.out.println("Datos Incorrectos 5");
             }
         } else if (linea.substring(0, subida.length()).equals(subida)) {
             datos = linea.substring(subida.length(), linea.length()-1);
@@ -121,26 +127,26 @@ public class ManejoArchivos {
                 filaFinal = Integer.valueOf(datSeparado[2]);
                 colFinal = Integer.valueOf(datSeparado[3]);
                 if(tablero.getTablero()[fila][columna] == null){
-                    tablero.getTablero()[fila][columna] = new Subida(filaFinal, colFinal);
+                    tablero.establecerCelda(fila, columna, new Subida(filaFinal, colFinal));
                 }
             } catch (Exception e){
-                System.out.println("Datos Incorrectos");
+                System.out.println("Datos Incorrectos 6");
             }
         } else if (linea.substring(0, bajada.length()).equals(bajada)) {
             datos = linea.substring(bajada.length(), linea.length()-1);
             String[] datSeparado = datos.split("\\,");
             int fila, columna, filaFinal, colFinal;
-            try{
+            //try{
                 fila = Integer.valueOf(datSeparado[0]);
                 columna = Integer.valueOf(datSeparado[1]);
                 filaFinal = Integer.valueOf(datSeparado[2]);
                 colFinal = Integer.valueOf(datSeparado[3]);
-                if(tablero.getTablero()[fila][columna] == null){
-                    tablero.getTablero()[fila][columna] = new Bajada(filaFinal, colFinal);
-                }
-            } catch (Exception e){
-                System.out.println("Datos Incorrectos");
-            }
+                if(tablero.getTablero()[fila][columna] == null){}
+                /*    tablero.establecerCelda(fila, columna, new Bajada(filaFinal, colFinal));
+                }*/
+            /*} catch (Exception e){
+                System.out.println("Datos Incorrectos 7");
+            }*/
         } else {
             System.out.println("No existe formato para esta celda");
         }

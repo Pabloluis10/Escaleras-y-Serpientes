@@ -9,17 +9,22 @@ import javax.swing.JLabel;
 public class Tablero {
    
     //Atributos
-    private final Celda[][] tablero;
-    private final JLabel[][] diseñoTablero;
-    private final int filas;
-    private final int columnas;
+    private Celda[][] tablero;
+    private JLabel[][] diseñoTablero ;
+    private int filas ;
+    private int columnas ;
 
-    public Tablero(int filas, int columnas) {
+    public Tablero() {
+        
+    }
+    
+    public void iniciarAtributos(int filas, int columnas) {
         this.tablero = new Celda[filas][columnas];
         this.diseñoTablero = new JLabel[filas][columnas];
         this.filas = filas;
         this.columnas = columnas;
     }
+    
     
     public void diseñarTablero(){
         int numCelda=0;
@@ -65,6 +70,10 @@ public class Tablero {
 
     public Celda[][] getTablero() {
         return tablero;
+    }
+    
+    public void establecerCelda(int fila, int columna, Celda aux){
+        tablero[fila][columna] = aux;
     }
 
     public JLabel[][] getDiseñoTablero() {
